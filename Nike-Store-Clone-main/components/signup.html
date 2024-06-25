@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #000, #FFD700);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .forgot-password-form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forgot-password-form">
+            <h2>Forgot Password</h2>
+            <p>Enter your email to receive a password reset link.</p>
+            <input type="email" id="email" placeholder="Email" required>
+            <button id="reset-button">Reset Password</button>
+            <div id="message"></div>
+        </div>
+    </div>
+    <script>
+        const resetButton = document.getElementById("reset-button");
+        const emailInput = document.getElementById("email");
+        const message = document.getElementById("message");
+
+        resetButton.addEventListener("click", () => {
+            const email = emailInput.value;
+
+            // Simulate sending a password reset link (replace with actual logic)
+            if (email.trim() !== "") {
+                // Here, you can send the password reset link to the user's email
+                // You might want to use an API or a server-side script to handle this.
+                message.innerHTML = "Password reset link sent to your email.";
+                emailInput.value = "";
+            } else {
+                message.innerHTML = "Please enter a valid email.";
+            }
+        });
+    </script>
+</body>
+
+</html>
